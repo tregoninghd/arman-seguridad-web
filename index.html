@@ -13,14 +13,30 @@
         <div class="shape shape-2"></div>
         <div class="shape shape-3"></div>
     </div>
+
+    <!-- Barra de Navegación -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">🛡️ Arman Seguridad</div>
+            <nav class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#contacto" class="btn-nav">Contacto</a>
+            </nav>
+            <button class="menu-btn" id="menu-btn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
     
-    <main class="glass-container">
-        <header>
-            <div class="logo">🛡️ Arman Seguridad Privada</div>
-        </header>
+    <main>
+        <!-- Sección 1: Hero Principal -->
+        <section id="inicio" class="section hero-section">
+            <div class="glass-container">
         
         <section class="hero-content">
-            <h1>Protegemos lo que más te importa</h1>
+            <h1>Protegemos lo mas valioso para ti</h1>
             <p>Soluciones integrales de seguridad privada para tu tranquilidad. Déjanos tu correo y nos pondremos en contacto.</p>
             
             <form id="notify-form" class="notify-form">
@@ -37,15 +53,120 @@
             </form>
         </section>
         
-        <footer>
-            <div class="social-links">
-                <a href="#" class="social-icon">Twitter</a>
-                <a href="#" class="social-icon">LinkedIn</a>
-                <a href="#" class="social-icon">Instagram</a>
             </div>
-            <p>&copy; 2026 EmpresaGenial. Todos los derechos reservados.</p>
-        </footer>
+        </section>
+
+        <!-- Sección 2: Quiénes Somos -->
+        <section id="nosotros" class="section about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>¿Quiénes Somos?</h2>
+                        <p><strong>Arman Seguridad Privada</strong> es una empresa mexicana fundada en 2021 ante la necesidad de ofrecer verdaderos servicios profesionales de seguridad.<br><br>Nos distinguimos por estar fortalecidos en valores, con conocimiento y experiencia probada en campo, conformados por expertos comprometidos en atender los problemas actuales de seguridad del país.</p>
+                        
+                        <div class="values-grid">
+                            <div class="value-item">🛡️ Lealtad</div>
+                            <div class="value-item">🎯 Profesionalismo</div>
+                            <div class="value-item">⚖️ Responsabilidad</div>
+                            <div class="value-item">🤝 Compromiso</div>
+                            <div class="value-item">⭐ Honestidad</div>
+                            <div class="value-item">✔️ Integridad</div>
+                        </div>
+                    </div>
+                    <div class="compliance-badge glass-card">
+                        <h3>Certificados y Registrados</h3>
+                        <p>Operamos con total cumplimiento legal (REPSE Federal y Estatal, Autorización SSP), garantizando tranquilidad absoluta a nuestros clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Servicios -->
+        <section id="servicios" class="section services-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Portafolio de Servicios</h2>
+                    <p>Protección integral diseñada para tus necesidades específicas.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <!-- Servicio 1 -->
+                    <div class="service-card glass-card">
+                        <div class="service-icon">👨‍✈️</div>
+                        <h3>Seguridad Privada</h3>
+                        <p>Prestación profesional de servicios de guardias para la protección y resguardo de personas, bienes, valores e instalaciones.</p>
+                    </div>
+                    <!-- Servicio 2 -->
+                    <div class="service-card glass-card">
+                        <div class="service-icon">🏢</div>
+                        <h3>Seguridad en Instalaciones</h3>
+                        <p>Identificación de vulnerabilidades, riesgos y amenazas para proteger y controlar el entorno físico de un inmueble.</p>
+                    </div>
+                    <!-- Servicio 3 -->
+                    <div class="service-card glass-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Consultoría</h3>
+                        <p>Asesoría integral que ajusta, alinea y propone medidas para brindar soporte estratégico a la organización.</p>
+                    </div>
+                    <!-- Servicio 4 -->
+                    <div class="service-card glass-card">
+                        <div class="service-icon">🔍</div>
+                        <h3>Investigaciones</h3>
+                        <p>Detección y soporte en el esclarecimiento de hechos, obteniendo y analizando información relevante.</p>
+                    </div>
+                    <!-- Servicio 5 -->
+                    <div class="service-card glass-card">
+                        <div class="service-icon">🎓</div>
+                        <h3>Capacitación</h3>
+                        <p>Coaching especializado en la formación profesional del personal operativo, administrativo y gerencial.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 4: Contacto (Antes el Hero Form) -->
+        <section id="contacto" class="section contact-section">
+            <div class="container glass-container contact-container">
+                <div class="contact-info">
+                    <h2>Atendemos Todos los Sectores</h2>
+                    <p>Residencial, Condominal, Comercial, Instalaciones y Equipo.<br>Con supervisión operativa continua en cada servicio.</p>
+                </div>
+                <div class="contact-form-wrapper">
+                    <h3>Déjanos tu correo</h3>
+                    <p>Nos pondremos en contacto contigo a la brevedad.</p>
+                    <form id="notify-form" class="notify-form">
+                        <div class="input-group">
+                            <input type="email" id="email" placeholder="Ingresa tu correo" required>
+                            <button type="submit" class="btn-primary">
+                                <span>Enviar</span>
+                                <svg viewBox="0 0 24 24" fill="none" class="arrow-icon">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <p id="form-msg" class="form-message"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <div class="logo">🛡️ Arman Seguridad</div>
+                <p>Protegemos lo que más valoras.</p>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-icon">WhatsApp</a>
+                <a href="#" class="social-icon">LinkedIn</a>
+                <a href="#" class="social-icon">Facebook</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Arman Seguridad Privada. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

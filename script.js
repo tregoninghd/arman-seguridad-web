@@ -2,7 +2,49 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('notify-form');
     const msgElement = document.getElementById('form-msg');
     
-    // Efecto 3D al mover el mouse en el contenedor de cristal (Glassmorphism)
+    // Configuración Menú responsivo y Sticky
+    const navbar = document.querySelector('.navbar');
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    // Cambiar color del navbar al hacer scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Menú de hamburguesa para móviles
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Animar el botón (convertir de menú a 'X')
+            const spans = menuBtn.querySelectorAll('span');
+            if (navLinks.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+    }
+
+    // Cerrar menú móvil al seleccionar un enlace
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                menuBtn.click();
+            }
+        });
+    });
+
+    // Efecto 3D al mover el mouse en el Hero (Glassmorphism)
     const container = document.querySelector('.glass-container');
     
     document.addEventListener('mousemove', (e) => {
