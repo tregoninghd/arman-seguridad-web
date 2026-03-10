@@ -49,6 +49,7 @@ body {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     background: linear-gradient(to right, #cbd5e1, #ffffff);
+    background-clip: text; /* Estándar */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -168,9 +169,18 @@ body {
 }
 
 .navbar .logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 120px; /* Tamaño más grande para el logo en el header */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.navbar .logo img:hover {
+    transform: scale(1.05);
 }
 
 .nav-links {
@@ -375,6 +385,35 @@ input[type="email"]::placeholder {
     color: #4ade80; /* Verde confianza */
 }
 
+.compliance-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(74, 222, 128, 0.1);
+    color: #4ade80;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-download:hover {
+    background: rgba(74, 222, 128, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 222, 128, 0.1);
+}
+
 /* Servicios Seccion */
 .services-grid {
     display: grid;
@@ -471,9 +510,12 @@ input[type="email"]::placeholder {
 }
 
 .footer-logo .logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo img {
+    height: 80px; /* Logo más grande en el footer */
+    width: auto;
 }
 
 .footer-logo p {
