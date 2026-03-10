@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500);
     });
 
-    // Manejo del formulario de suscripción
-    form.addEventListener('submit', (e) => {
+    // Manejo del formulario de suscripción con Formspree
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
         const btn = form.querySelector('button');
@@ -76,21 +76,35 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.style.opacity = '0.7';
         btn.disabled = true;
         
-        // Simulando una llamada a una API o servidor
-        setTimeout(() => {
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                form.reset();
+                msgElement.textContent = '¡Gracias! Nos pondremos en contacto contigo pronto.';
+                msgElement.className = 'form-message success';
+            } else {
+                msgElement.textContent = 'Hubo un problema al enviar tu correo. Intenta de nuevo.';
+                msgElement.className = 'form-message error';
+            }
+        } catch (error) {
+            msgElement.textContent = 'Error de conexión. Intenta más tarde.';
+            msgElement.className = 'form-message error';
+        } finally {
             btn.innerHTML = originalBtnText;
             btn.style.opacity = '1';
             btn.disabled = false;
-            
-            form.reset();
-            
-            msgElement.textContent = '¡Listo! Te avisaremos muy pronto. ¡Qué chido que te unas!';
-            msgElement.className = 'form-message success';
             
             // Ocultar mensaje después de 5 segundos
             setTimeout(() => {
                 msgElement.style.opacity = '0';
             }, 5000);
-        }, 1500);
+        }
     });
 });
